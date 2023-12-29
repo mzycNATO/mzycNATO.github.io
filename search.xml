@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hello</title>
+      <link href="/2023/12/29/hello/index/"/>
+      <url>/2023/12/29/hello/index/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="c++">#include&lt;bits/stdc++.h&gt;#define ll long long#define MOD 1000000007llusing namespace std;string L;ll dp[100005][2],n;ll qpow(ll a,ll b)&#123;    ll res=1;    while(b)    &#123;        if(b&amp;1)res=res*a%MOD;        a=a*a%MOD;b&gt;&gt;=1;    &#125;    return res;&#125;ll dfs(ll now,ll fa,bool dm)&#123;    if(dp[now][dm])return fa*dp[now][dm]%MOD;    if(now==n)return fa;    ll res=0,maxn=(dm?(L[now]-&#39;0&#39;):1);    if(dm)    &#123;        if(maxn==1)        &#123;        res=(res+dfs(now+1,1,0))%MOD;        res=(res+dfs(now+1,2,1))%MOD;        &#125;        else        res=(res+dfs(now+1,1,1))%MOD;    &#125;    else    res=qpow(3,n-now);    dp[now][dm]=res;    return res*fa%MOD;&#125;int main()&#123;    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);    cin&gt;&gt;L;    n=L.size();    ll res=0;    res=(res+dfs(1,1,0))%MOD;    res=(res+dfs(1,2,1))%MOD;    cout&lt;&lt;res;&#125;</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/12/29/hello-world/"/>
+      <url>/2023/12/29/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
